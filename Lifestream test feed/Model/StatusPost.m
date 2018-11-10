@@ -5,25 +5,25 @@
 //  Created by Vadym Patalakh on 11/10/18.
 //
 
-#import "Post.h"
+#import "StatusPost.h"
 
 static NSString * const textKey =       @"text";
 static NSString * const publishAtKey =  @"publish_at";
 
-@interface Post ()
+@interface StatusPost ()
 
 @property (readwrite)   NSString    *text;
 @property (readwrite)   NSString    *publishDate;
 
 @end
 
-@implementation Post
+@implementation StatusPost
 
 + (instancetype)postWithDictionary:(NSDictionary *)dictionary {
     NSString *text = dictionary[textKey];
     NSString *publishDate = dictionary[publishAtKey];
     
-    Post *post = [[Post alloc] initWithText:text publishDate:publishDate];
+    StatusPost *post = [[StatusPost alloc] initWithText:text publishDate:publishDate];
     return post;
 }
 
@@ -33,6 +33,8 @@ static NSString * const publishAtKey =  @"publish_at";
     if (self) {
         self.text = text;
         self.publishDate = publishDate;
+        
+        self.postType = PostTypeStatus;
     }
     
     return self;
