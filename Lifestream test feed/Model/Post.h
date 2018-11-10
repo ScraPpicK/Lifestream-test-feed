@@ -16,4 +16,6 @@
 - (instancetype)init __attribute((unavailable));
 - (instancetype)initWithText:(nonnull NSString *)text publishDate:(nullable NSString *)publishDate;
 
++ (instancetype)postWithDictionary:(NSDictionary *)dictionary;
+
 @end

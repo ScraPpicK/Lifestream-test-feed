@@ -10,8 +10,6 @@
 static NSString * const feedKey =       @"feed";
 static NSString * const dataKey =       @"data";
 static NSString * const typeKey =       @"type";
-static NSString * const textKey =       @"text";
-static NSString * const publishAtKey =  @"publish_at";
 
 static NSString * const statusTypeString = @"status";
 
@@ -40,10 +38,8 @@ static NSString * const statusTypeString = @"status";
             }
             
             NSDictionary *postData = data[dataKey];
-            NSString *text = postData[textKey];
-            NSString *publishDate = postData[publishAtKey];
             
-            Post *post = [[Post alloc] initWithText:text publishDate:publishDate];
+            Post *post = [Post postWithDictionary:postData];
             [posts addObject:post];
         }
     } @catch (NSException *exception) {
