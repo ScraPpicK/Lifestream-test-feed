@@ -13,11 +13,13 @@
 		FA138FA02196C7BD008CBD52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA138F9E2196C7BD008CBD52 /* LaunchScreen.storyboard */; };
 		FA138FA32196C7BD008CBD52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA138FA22196C7BD008CBD52 /* main.m */; };
 		FA138FAE2196C886008CBD52 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA138FAD2196C886008CBD52 /* FeedViewController.m */; };
-		FA138FB12196C964008CBD52 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = FA138FB02196C964008CBD52 /* Post.m */; };
+		FA138FB12196C964008CBD52 /* StatusPost.m in Sources */ = {isa = PBXBuildFile; fileRef = FA138FB02196C964008CBD52 /* StatusPost.m */; };
 		FA138FB42196CB16008CBD52 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA138FB32196CB16008CBD52 /* DownloadManager.m */; };
 		FA138FB82196D704008CBD52 /* FeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA138FB62196D704008CBD52 /* FeedTableViewCell.m */; };
 		FA138FB92196D704008CBD52 /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA138FB72196D704008CBD52 /* FeedTableViewCell.xib */; };
 		FA138FBE2196E821008CBD52 /* DataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA138FBD2196E821008CBD52 /* DataParser.m */; };
+		FA138FC121971171008CBD52 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = FA138FC021971171008CBD52 /* Post.m */; };
+		FA138FC4219712F2008CBD52 /* VideoPost.m in Sources */ = {isa = PBXBuildFile; fileRef = FA138FC3219712F2008CBD52 /* VideoPost.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +33,8 @@
 		FA138FA22196C7BD008CBD52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FA138FAC2196C886008CBD52 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		FA138FAD2196C886008CBD52 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
-		FA138FAF2196C964008CBD52 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
-		FA138FB02196C964008CBD52 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		FA138FAF2196C964008CBD52 /* StatusPost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatusPost.h; sourceTree = "<group>"; };
+		FA138FB02196C964008CBD52 /* StatusPost.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatusPost.m; sourceTree = "<group>"; };
 		FA138FB22196CB16008CBD52 /* DownloadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
 		FA138FB32196CB16008CBD52 /* DownloadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
 		FA138FB52196D704008CBD52 /* FeedTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedTableViewCell.h; sourceTree = "<group>"; };
@@ -40,6 +42,10 @@
 		FA138FB72196D704008CBD52 /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
 		FA138FBC2196E821008CBD52 /* DataParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataParser.h; sourceTree = "<group>"; };
 		FA138FBD2196E821008CBD52 /* DataParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataParser.m; sourceTree = "<group>"; };
+		FA138FBF21971171008CBD52 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		FA138FC021971171008CBD52 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		FA138FC2219712F2008CBD52 /* VideoPost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoPost.h; sourceTree = "<group>"; };
+		FA138FC3219712F2008CBD52 /* VideoPost.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoPost.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +95,12 @@
 		FA138FA92196C7F2008CBD52 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FA138FAF2196C964008CBD52 /* Post.h */,
-				FA138FB02196C964008CBD52 /* Post.m */,
+				FA138FBF21971171008CBD52 /* Post.h */,
+				FA138FC021971171008CBD52 /* Post.m */,
+				FA138FC2219712F2008CBD52 /* VideoPost.h */,
+				FA138FC3219712F2008CBD52 /* VideoPost.m */,
+				FA138FAF2196C964008CBD52 /* StatusPost.h */,
+				FA138FB02196C964008CBD52 /* StatusPost.m */,
 				FA138FB22196CB16008CBD52 /* DownloadManager.h */,
 				FA138FB32196CB16008CBD52 /* DownloadManager.m */,
 				FA138FBC2196E821008CBD52 /* DataParser.h */,
@@ -194,7 +204,9 @@
 				FA138FBE2196E821008CBD52 /* DataParser.m in Sources */,
 				FA138F952196C7BB008CBD52 /* AppDelegate.m in Sources */,
 				FA138FB42196CB16008CBD52 /* DownloadManager.m in Sources */,
-				FA138FB12196C964008CBD52 /* Post.m in Sources */,
+				FA138FB12196C964008CBD52 /* StatusPost.m in Sources */,
+				FA138FC4219712F2008CBD52 /* VideoPost.m in Sources */,
+				FA138FC121971171008CBD52 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

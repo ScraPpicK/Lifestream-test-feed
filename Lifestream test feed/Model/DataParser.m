@@ -6,12 +6,15 @@
 //
 
 #import "DataParser.h"
+#import "StatusPost.h"
+#import "VideoPost.h"
 
 static NSString * const feedKey =       @"feed";
 static NSString * const dataKey =       @"data";
 static NSString * const typeKey =       @"type";
 
-static NSString * const statusTypeString = @"status";
+static NSString * const statusTypeString =  @"status";
+static NSString * const videoTypeString =   @"video";
 
 @implementation DataParser
 
@@ -33,14 +36,17 @@ static NSString * const statusTypeString = @"status";
     NSMutableArray<Post *> *posts = [NSMutableArray new];
     @try {
         for (NSDictionary *data in feedData) {
-            if (![data[typeKey] isEqualToString:statusTypeString]) {
-                continue;
+            if ([data[typeKey] isEqualToString:statusTypeString]) {
+                NSDictionary *postData = data[dataKey];
+                
+                StatusPost *post = [StatusPost postWithDictionary:postData];
+                [posts addObject:post];
+            } else if ([data[typeKey] isEqualToString:videoTypeString]) {
+                NSDictionary *postData = data[dataKey];
+                
+                VideoPost *post = [VideoPost postWithDictionary:postData];
+                [posts addObject:post];
             }
-            
-            NSDictionary *postData = data[dataKey];
-            
-            Post *post = [Post postWithDictionary:postData];
-            [posts addObject:post];
         }
     } @catch (NSException *exception) {
         return nil;

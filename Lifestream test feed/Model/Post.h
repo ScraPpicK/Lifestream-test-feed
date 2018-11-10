@@ -7,14 +7,14 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, PostType) {
+    PostTypeStatus,
+    PostTypeVideo,
+};
+
 @interface Post : NSObject
 
-@property (nonatomic, readonly, nonnull)    NSString    *text;
-@property (nonatomic, readonly, nullable)   NSString    *publishDate;
-
-+ (instancetype)new __attribute((unavailable));
-- (instancetype)init __attribute((unavailable));
-- (instancetype)initWithText:(nonnull NSString *)text publishDate:(nullable NSString *)publishDate;
+@property (nonatomic)  PostType postType;
 
 + (instancetype)postWithDictionary:(NSDictionary *)dictionary;
 
