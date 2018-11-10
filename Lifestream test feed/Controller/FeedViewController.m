@@ -8,6 +8,7 @@
 #import "FeedViewController.h"
 #import "DownloadManager.h"
 #import "FeedTableViewCell.h"
+#import "DataParser.h"
 
 @interface FeedViewController () <UITableViewDataSource, DownloadManagerDelegate>
 
@@ -50,13 +51,16 @@
 
 #pragma mark - Download manager delegate
 
-- (void)downloadManagerDidGetData:(NSArray<Post *> *)data {
-    self.tableViewData = data;
-    [self.feedTableView reloadData];
-}
-
-- (void)couldNotParseData {
-    // show alert here
+- (void)downloadManagerDidGetData:(NSData *)data {
+    DataParser *parser = [DataParser new];
+    [parser parseData:data withCompletionHandler:^(BOOL success, NSArray<Post *> *posts) {
+        if (success) {
+            self.tableViewData = posts;
+            [self.feedTableView reloadData];
+        } else {
+            // show alert here
+        }
+    }];
 }
 
 - (void)couldNotDownloadData {

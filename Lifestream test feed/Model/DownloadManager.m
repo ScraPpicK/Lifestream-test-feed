@@ -12,9 +12,7 @@
 
 @interface DownloadManager () <NSURLSessionDownloadDelegate>
 
-@property (nonatomic, weak) NSObject<DownloadManagerDelegate>   *delegate;
 @property (nonatomic)       NSURLSession                        *urlSession;
-@property (nonatomic)       DataParser                          *dataParser;
 
 @end
 
@@ -26,7 +24,6 @@
     if (self) {
         NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
         self.urlSession = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:[NSOperationQueue mainQueue]];
-        self.dataParser = [DataParser new];
 
         self.delegate = delegate;
     }
@@ -49,17 +46,9 @@
 
 - (void)URLSession:(nonnull NSURLSession *)session downloadTask:(nonnull NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(nonnull NSURL *)location {
     NSData *postsData = [NSData dataWithContentsOfURL:location];
-    [self.dataParser parseData:postsData withCompletionHandler:^(BOOL success, NSArray<Post *> *posts) {
-        if (success) {
-            if ([self.delegate respondsToSelector:@selector(downloadManagerDidGetData:)]) {
-                [self.delegate downloadManagerDidGetData:posts];
-            }
-        } else {
-            if ([self.delegate respondsToSelector:@selector(couldNotParseData)]) {
-                [self.delegate couldNotParseData];
-            }
-        }
-    }];
+    if ([self.delegate respondsToSelector:@selector(downloadManagerDidGetData:)]) {
+        [self.delegate downloadManagerDidGetData:postsData];
+    }
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {

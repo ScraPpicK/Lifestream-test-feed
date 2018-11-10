@@ -6,20 +6,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Post.h"
 
 @protocol DownloadManagerDelegate <NSObject>
 
-- (void)downloadManagerDidGetData:(NSArray<Post *> *)data;
+- (void)downloadManagerDidGetData:(NSData *)data;
 - (void)couldNotDownloadData;
-- (void)couldNotParseData;
 
 @end
 
 @interface DownloadManager : NSObject
 
-+ (instancetype)new  __attribute((unavailable));
-- (instancetype)init  __attribute((unavailable));
+@property (nonatomic, weak) NSObject<DownloadManagerDelegate>   *delegate;
+
 - (instancetype)initWithDelegate:(nonnull NSObject<DownloadManagerDelegate> *)delegate;
 
 - (void)getData;
