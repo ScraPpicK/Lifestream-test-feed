@@ -10,7 +10,7 @@
 @interface Post : NSObject
 
 @property (nonatomic, readonly, nonnull)    NSString    *text;
-@property (nonatomic, readonly)             NSString    *publishDate;
+@property (nonatomic, readonly, nullable)   NSString    *publishDate;
 
 + (instancetype)new __attribute((unavailable));
 - (instancetype)init __attribute((unavailable));

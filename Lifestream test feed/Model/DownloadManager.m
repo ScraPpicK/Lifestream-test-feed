@@ -41,6 +41,10 @@
     [downloadTask resume];
 }
 
+- (void)dealloc {
+    [self.urlSession invalidateAndCancel];
+}
+
 #pragma mark - NSURLSession download delegate
 
 - (void)URLSession:(nonnull NSURLSession *)session downloadTask:(nonnull NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(nonnull NSURL *)location {
@@ -62,6 +66,8 @@
     if (error && [self.delegate respondsToSelector:@selector(couldNotDownloadData)]) {
         [self.delegate couldNotDownloadData];
     }
+    
+    [self.urlSession finishTasksAndInvalidate];
 }
 
 @end
