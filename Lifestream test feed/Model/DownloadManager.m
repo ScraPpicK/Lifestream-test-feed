@@ -32,10 +32,23 @@
 }
 
 - (void)getData {
+    [self cancelTasks];
     NSURLRequest *downloadDataRequest = [NSURLRequest requestWithURL:kApiUrl];
     NSURLSessionDownloadTask *downloadTask = [self.urlSession downloadTaskWithRequest:downloadDataRequest];
     
     [downloadTask resume];
+}
+
+- (void)cancelTasks {
+    [self.urlSession getTasksWithCompletionHandler:^(NSArray *dataTasks, NSArray *uploadTasks, NSArray *downloadTasks) {
+        
+        if (!dataTasks || !dataTasks.count) {
+            return;
+        }
+        for (NSURLSessionTask *task in dataTasks) {
+            [task cancel];
+        }
+    }];
 }
 
 - (void)dealloc {
