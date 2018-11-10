@@ -38,8 +38,6 @@
 		FA138FB52196D704008CBD52 /* FeedTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedTableViewCell.h; sourceTree = "<group>"; };
 		FA138FB62196D704008CBD52 /* FeedTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewCell.m; sourceTree = "<group>"; };
 		FA138FB72196D704008CBD52 /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
-		FA138FBA2196E1CF008CBD52 /* TableViewCellReusable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCellReusable.h; sourceTree = "<group>"; };
-		FA138FBB2196E208008CBD52 /* ViewNibName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewNibName.h; sourceTree = "<group>"; };
 		FA138FBC2196E821008CBD52 /* DataParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataParser.h; sourceTree = "<group>"; };
 		FA138FBD2196E821008CBD52 /* DataParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,8 +114,6 @@
 				FA138FB52196D704008CBD52 /* FeedTableViewCell.h */,
 				FA138FB62196D704008CBD52 /* FeedTableViewCell.m */,
 				FA138FB72196D704008CBD52 /* FeedTableViewCell.xib */,
-				FA138FBA2196E1CF008CBD52 /* TableViewCellReusable.h */,
-				FA138FBB2196E208008CBD52 /* ViewNibName.h */,
 			);
 			path = View;
 			sourceTree = "<group>";

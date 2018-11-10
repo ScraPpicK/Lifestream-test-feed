@@ -7,10 +7,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Post.h"
-#import "TableViewCellReusable.h"
-#import "ViewNibName.h"
 
-@interface FeedTableViewCell : UITableViewCell <TableViewCellReusable, ViewNibName>
+@interface FeedTableViewCell : UITableViewCell
+
++ (NSString *)reusableIdentifier;
++ (NSString *)nibName;
 
 - (void)setRepresentedObject:(Post *)representedObject;
 
