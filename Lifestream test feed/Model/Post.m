@@ -16,16 +16,6 @@
 
 @implementation Post
 
-- (instancetype)init {
-    self = [super init];
-    
-    if (self) {
-        self.text = @"This is a default text";
-    }
-    
-    return self;
-}
-
 - (instancetype)initWithText:(NSString *)text publishDate:(NSString *)publishDate {
     self = [super init];
     

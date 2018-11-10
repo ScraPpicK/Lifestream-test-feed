@@ -12,6 +12,8 @@
 @property (nonatomic, readonly, nonnull)    NSString    *text;
 @property (nonatomic, readonly)             NSString    *publishDate;
 
++ (instancetype)new __attribute((unavailable));
+- (instancetype)init __attribute((unavailable));
 - (instancetype)initWithText:(nonnull NSString *)text publishDate:(nullable NSString *)publishDate;
 
 @end
