@@ -47,10 +47,10 @@ static NSString * const statusTypeString = @"status";
             [posts addObject:post];
         }
     } @catch (NSException *exception) {
-        
-    } @finally {
-        return posts;
+        return nil;
     }
+    
+    return posts;
 }
 
 @end

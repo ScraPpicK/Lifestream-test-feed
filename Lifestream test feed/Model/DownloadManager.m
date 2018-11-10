@@ -44,8 +44,6 @@
 #pragma mark - NSURLSession download delegate
 
 - (void)URLSession:(nonnull NSURLSession *)session downloadTask:(nonnull NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(nonnull NSURL *)location {
-//    NSFileManager *fileManager = [NSFileManager defaultManager];
-//    if ([fileManager fileExistsAtPath:[location absoluteString]]) {
     NSData *postsData = [NSData dataWithContentsOfURL:location];
     [self.dataParser parseData:postsData withCompletionHandler:^(BOOL success, NSArray<Post *> *posts) {
         if (success) {
@@ -58,8 +56,6 @@
             }
         }
     }];
-
-//    }
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
