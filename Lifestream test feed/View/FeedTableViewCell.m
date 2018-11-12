@@ -24,9 +24,9 @@
     return self.description;
 }
 
-- (void)setRepresentedObject:(StatusPost *)representedObject {
-    self.postTextLabel.text = representedObject.text;
-    self.publishDateLabel.text = representedObject.publishDate;
+- (void)setText:(NSString *)text publishDate:(NSString *)publishDate {
+    self.postTextLabel.text = text;
+    self.publishDateLabel.text = publishDate;
 }
 
 @end

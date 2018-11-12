@@ -6,13 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "StatusPost.h"
 
 @interface FeedTableViewCell : UITableViewCell
 
 + (NSString *)reusableIdentifier;
 + (NSString *)nibName;
 
-- (void)setRepresentedObject:(StatusPost *)representedObject;
+- (void)setText:(NSString *)text publishDate:(NSString *)publishDate;
 
 @end

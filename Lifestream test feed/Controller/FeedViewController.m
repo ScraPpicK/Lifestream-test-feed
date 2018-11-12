@@ -9,6 +9,7 @@
 #import "DownloadManager.h"
 #import "FeedTableViewCell.h"
 #import "DataParser.h"
+#import "StatusPost.h"
 
 @interface FeedViewController () <UITableViewDataSource, DownloadManagerDelegate>
 
@@ -41,7 +42,7 @@
     FeedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[FeedTableViewCell reusableIdentifier]];
     
     StatusPost *post = (StatusPost *)self.tableViewData[indexPath.row];
-    [cell setRepresentedObject:post];
+    [cell setText:post.text publishDate:post.publishDate];
     
     return cell;
 }
